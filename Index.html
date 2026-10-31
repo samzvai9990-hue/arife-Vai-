@@ -86,27 +86,12 @@
             transform: translate(-50%, 0);
             opacity: 1;
         }
-
-        /* 7. Telegram Popup Animation */
-        #telegramModal {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        #telegramModal.hidden-popup {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        #telegramModal.show-popup {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
     </style>
 </head>
 <body class="bg-[#050811] flex justify-center min-h-screen text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
 
     <!-- Mobile App Container Frame -->
-    <div class="w-full max-w-md bg-gradient-to-b from-[#090d18] via-[#070b14] to-[#03060c] min-h-screen shadow-2xl flex flex-col relative pb-10 border-x border-slate-800/60 overflow-hidden">
+    <div class="w-full max-w-md bg-gradient-to-b from-[#090d18] via-[#070b14] to-[#03060c] min-h-screen shadow-2xl flex flex-col relative pb-8 border-x border-slate-800/60 overflow-hidden">
 
         <!-- 1. Top Scrolling Live Marquee Banner -->
         <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-2.5 overflow-hidden marquee-container shadow-md shadow-red-950/50 sticky top-0 z-40 border-b border-red-500/40">
@@ -203,22 +188,18 @@
                 <!-- Swiper Wrapper -->
                 <div class="swiper mySwiper w-full h-full">
                     <div class="swiper-wrapper">
-                        
                         <!-- Slide 1 -->
                         <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
                             <img src="https://i.postimg.cc/8cJFv47B/file-00000000c33c8210b8324307cd14754c.png" alt="AF V2Ray VIP Banner 1" class="w-full h-full object-cover">
                         </div>
-
                         <!-- Slide 2 -->
                         <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
                             <img src="https://i.postimg.cc/ht627Dpb/file-000000000344820ca06ce8ffb7c34898.png" alt="AF V2Ray VIP Banner 2" class="w-full h-full object-cover">
                         </div>
-
                         <!-- Slide 3 -->
                         <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
                             <img src="https://i.postimg.cc/bJQVh70W/file-000000002a2c821095564c2e3dfaae27.png" alt="AF V2Ray VIP Banner 3" class="w-full h-full object-cover">
                         </div>
-
                     </div>
                     <!-- Swiper Pagination Dots -->
                     <div class="swiper-pagination !bottom-2"></div>
@@ -310,7 +291,7 @@
                 </div>
             </div>
 
-            <!-- Jawway Network Package (60 SAR সরানো হয়েছে) -->
+            <!-- Jawway Network Package -->
             <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-3.5 relative overflow-hidden group hover:border-slate-700 transition">
                 <div class="flex justify-between items-center mb-2">
                     <div class="flex items-center space-x-2.5">
@@ -325,8 +306,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Buy From App Button -->
                 <a href="https://play.google.com/store/apps/details?id=com.jawwyevo_main.app" target="_blank" class="mt-3 w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-green-950/40 flex items-center justify-center gap-2 active:scale-95 transition">
                     <i class="fa-solid fa-cart-shopping text-sm"></i> BUY FROM APP
                 </a>
@@ -350,8 +329,6 @@
                         60 SAR
                     </span>
                 </div>
-
-                <!-- Buy From App Button -->
                 <a href="https://play.google.com/store/apps/details?id=com.mediapark.rbm" target="_blank" class="mt-3 w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-green-950/40 flex items-center justify-center gap-2 active:scale-95 transition">
                     <i class="fa-solid fa-cart-shopping text-sm"></i> BUY FROM APP
                 </a>
@@ -371,13 +348,10 @@
                             <h3 class="text-sm font-bold text-white mt-0.5">(60 SAR) SOCIAL PACKAGE</h3>
                         </div>
                     </div>
-                    <!-- Lebara Official Style Badge -->
                     <div class="bg-sky-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md shadow-sky-500/20">
                         <span>LEBARA</span>
                     </div>
                 </div>
-
-                <!-- Dial Code Button -->
                 <a href="tel:*77*019%23" onclick="copyCode('*77*019#', 'Dial কোড *77*019# কপি হয়েছে!')" class="mt-3 w-full bg-slate-950 hover:bg-slate-900 border-2 border-rose-600 text-white font-extrabold text-xs py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
                     <i class="fa-regular fa-envelope text-rose-500 text-sm"></i>
                     <span class="tracking-wider">Dial *77*019#</span>
@@ -386,45 +360,95 @@
 
         </div>
 
-        <!-- 7. Footer -->
-        <div class="mt-auto pt-6 text-center text-slate-500 text-[11px] pb-3">
-            <p>© 2026 AF V2RAY VIP • All Rights Reserved</p>
-            <p class="text-[10px] text-slate-600 mt-0.5">High Speed V2Ray Core v5.14 Enabled</p>
-        </div>
+        <!-- 7. NEW: PACKAGE CANCEL CODE SECTION (ছবি অনুযায়ী হুবহু যোগ করা হলো) -->
+        <div class="px-4 mt-4">
+            <div class="bg-gradient-to-b from-slate-900/95 to-slate-950 rounded-3xl border-2 border-rose-600/60 p-3.5 shadow-2xl relative overflow-hidden">
+                <!-- Cancel Section Header Button -->
+                <div class="bg-gradient-to-r from-red-600 to-rose-600 text-white font-black text-center py-2.5 px-4 rounded-2xl text-xs sm:text-sm tracking-widest uppercase shadow-md mb-3.5 border border-red-400/40">
+                    PACKAGE CANCEL CODE
+                </div>
 
-    </div>
+                <!-- 60 SR Cancel Card -->
+                <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-3.5 mb-3 relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-rose-600 text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider">
+                            MOBILY NETWORK
+                        </span>
+                        <!-- Mobily Logo/Badge -->
+                        <div class="bg-white/95 px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i class="fa-solid fa-cube text-sky-500 text-xs"></i>
+                            <span class="text-[9px] font-black text-sky-700 leading-none">موبايلي<br><span class="text-[8px] font-extrabold">Mobily</span></span>
+                        </div>
+                    </div>
 
-    <!-- 8. TELEGRAM POPUP MODAL (স্ক্রিনের ওপর ভেসে ওঠা টেলিগ্রাম পপ-আপ) -->
-    <div id="telegramModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden-popup">
-        <div class="relative w-full max-w-xs bg-gradient-to-b from-slate-900 via-[#0a1224] to-slate-950 border border-cyan-500/40 rounded-3xl p-5 text-center shadow-2xl shadow-cyan-950/60 transform transition-all duration-300">
-            <!-- Close Button -->
-            <button onclick="closeTelegramPopup()" class="absolute top-3 right-3 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-7 h-7 rounded-full flex items-center justify-center text-sm transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+                    <!-- Cancel Title -->
+                    <div class="text-center my-2 flex items-center justify-center gap-1.5 font-black text-xs sm:text-sm text-slate-100 uppercase tracking-wide">
+                        <span class="text-rose-500 text-base">❌</span>
+                        <span>60 SR CANCEL PACKAGE</span>
+                    </div>
 
-            <!-- Telegram Animated Icon -->
-            <div class="w-16 h-16 mx-auto mb-3.5 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-2xl flex items-center justify-center shadow-lg shadow-sky-500/40 neon-glow animate-bounce">
-                <i class="fa-brands fa-telegram text-white text-3xl"></i>
+                    <!-- Code Copy Buttons -->
+                    <div class="grid grid-cols-2 gap-2 mt-3">
+                        <button onclick="copyCode('1100', 'Send Code 1100 কপি হয়েছে!')" class="bg-slate-900/90 hover:bg-slate-900 active:scale-95 border-2 border-rose-600/80 rounded-xl py-2 px-2 flex items-center justify-center gap-1.5 text-xs transition">
+                            <span class="text-xs">📩</span>
+                            <span class="text-slate-300 font-medium text-[11px]">Send:</span>
+                            <span class="font-extrabold text-white text-xs">1100</span>
+                        </button>
+                        <button onclick="copyCode('0440', 'Type Code 0440 কপি হয়েছে!')" class="bg-slate-900/90 hover:bg-slate-900 active:scale-95 border-2 border-rose-600/80 rounded-xl py-2 px-2 flex items-center justify-center gap-1.5 text-xs transition">
+                            <span class="text-xs">✍️</span>
+                            <span class="text-slate-300 font-medium text-[11px]">Type:</span>
+                            <span class="font-extrabold text-white text-xs">0440</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 30 SR Cancel Card -->
+                <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-3.5 relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-rose-600 text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider">
+                            MOBILY NETWORK
+                        </span>
+                        <!-- Mobily Logo/Badge -->
+                        <div class="bg-white/95 px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i class="fa-solid fa-cube text-sky-500 text-xs"></i>
+                            <span class="text-[9px] font-black text-sky-700 leading-none">موبايلي<br><span class="text-[8px] font-extrabold">Mobily</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Cancel Title -->
+                    <div class="text-center my-2 flex items-center justify-center gap-1.5 font-black text-xs sm:text-sm text-slate-100 uppercase tracking-wide">
+                        <span class="text-rose-500 text-base">❌</span>
+                        <span>30 SR CANCEL PACKAGE</span>
+                    </div>
+
+                    <!-- Code Copy Buttons (Stacked Layout like the image) -->
+                    <div class="flex flex-col gap-2 mt-3 max-w-[210px] mx-auto">
+                        <button onclick="copyCode('1100', 'Send Code 1100 কপি হয়েছে!')" class="w-full bg-slate-900/90 hover:bg-slate-900 active:scale-95 border-2 border-rose-600/80 rounded-xl py-2 px-3 flex items-center justify-center gap-2 text-xs transition">
+                            <span class="text-xs">📩</span>
+                            <span class="text-slate-300 font-medium text-[11px]">Send:</span>
+                            <span class="font-extrabold text-white text-xs">1100</span>
+                        </button>
+                        <button onclick="copyCode('58299', 'Type Code 58299 কপি হয়েছে!')" class="w-full bg-slate-900/90 hover:bg-slate-900 active:scale-95 border-2 border-rose-600/80 rounded-xl py-2 px-3 flex items-center justify-center gap-2 text-xs transition">
+                            <span class="text-xs">✍️</span>
+                            <span class="text-slate-300 font-medium text-[11px]">Type:</span>
+                            <span class="font-extrabold text-white text-xs">58299</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            <!-- Content -->
-            <h3 class="text-lg font-black text-white tracking-wide">আমাদের টেলিগ্রামে যুক্ত হন</h3>
-            <p class="text-xs text-slate-300 mt-1 mb-4 leading-relaxed font-medium">
-                নতুন আপডেট, ভিআইপি পিন এবং যেকোনো সাপোর্টের জন্য এখনই আমাদের টেলিগ্রাম গ্রুপ/চ্যানেলে যোগ দিন।
-            </p>
-
-            <!-- Telegram Link Button -->
-            <a href="https://t.me/your_telegram_channel" target="_blank" onclick="closeTelegramPopup()" class="w-full bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-600 hover:from-sky-600 hover:to-cyan-600 active:scale-95 text-white font-extrabold text-sm py-3 px-4 rounded-xl shadow-lg shadow-cyan-500/30 flex items-center justify-center gap-2 transition animate-shimmer relative overflow-hidden">
-                <i class="fa-brands fa-telegram text-lg"></i>
-                <span>JOIN TELEGRAM</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-0.5"></i>
-            </a>
-
-            <!-- Dismiss Later -->
-            <button onclick="closeTelegramPopup()" class="mt-2.5 text-[11px] text-slate-400 hover:text-slate-300 underline underline-offset-2">
-                পরে যুক্ত হব (Close)
-            </button>
         </div>
+
+        <!-- 8. UPDATED FOOTER (Create by SAIDUL) -->
+        <div class="mt-auto pt-6 text-center text-slate-400 text-xs pb-3">
+            <p class="flex items-center justify-center gap-1.5 font-medium tracking-wide">
+                <span>Create by</span>
+                <a href="https://t.me/SAIDULHP" target="_blank" class="inline-flex items-center gap-1 bg-gradient-to-r from-cyan-500 to-sky-500 text-slate-950 font-black px-2 py-0.5 rounded-md text-[11px] shadow-md shadow-cyan-500/20 hover:scale-105 active:scale-95 transition-transform duration-150">
+                    <i class="fa-brands fa-telegram text-xs"></i>
+                    <span>SAIDUL</span>
+                </a>
+            </p>
+        </div>
+
     </div>
 
     <!-- Animated Glass Toast Notification -->
@@ -503,25 +527,6 @@
             toastTimeout = setTimeout(() => {
                 toast.classList.remove("show");
             }, 2600);
-        }
-
-        // Telegram Popup Logic (১.৫ সেকেন্ড পর পপ-আপ ওপেন হবে)
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                openTelegramPopup();
-            }, 1500);
-        });
-
-        function openTelegramPopup() {
-            const modal = document.getElementById('telegramModal');
-            modal.classList.remove('hidden-popup');
-            modal.classList.add('show-popup');
-        }
-
-        function closeTelegramPopup() {
-            const modal = document.getElementById('telegramModal');
-            modal.classList.remove('show-popup');
-            modal.classList.add('hidden-popup');
         }
     </script>
 </body>
