@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AF V2RAY VIP VPN - 5G High Speed</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 Pro CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter & Hind Siliguri -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Swiper.js Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+        }
+
+        /* 1. Continuous Top Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-content {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        /* 2. Floating Animation for Icons & Badges */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+
+        /* 3. Button Shimmer Light Animation */
+        @keyframes shimmer {
+            100% { transform: translateX(150%); }
+        }
+        .animate-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            transform: translateX(-150%);
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+            animation: shimmer 2.5s infinite;
+        }
+
+        /* 4. Glow Filter */
+        .neon-glow {
+            filter: drop-shadow(0 0 16px rgba(6, 182, 212, 0.6));
+        }
+
+        /* 5. Custom Swiper Pagination Styling */
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.6) !important;
+            width: 7px;
+            height: 7px;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+            background: #06b6d4 !important;
+            width: 22px !important;
+            border-radius: 999px !important;
+            box-shadow: 0 0 8px #06b6d4;
+        }
+
+        /* 6. Toast Popup */
+        #toast {
+            visibility: hidden;
+            transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform: translate(-50%, 60px);
+            opacity: 0;
+        }
+        #toast.show {
+            visibility: visible;
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+
+        /* 7. Telegram Popup Animation */
+        #telegramModal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #telegramModal.hidden-popup {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #telegramModal.show-popup {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-[#050811] flex justify-center min-h-screen text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Mobile App Container Frame -->
+    <div class="w-full max-w-md bg-gradient-to-b from-[#090d18] via-[#070b14] to-[#03060c] min-h-screen shadow-2xl flex flex-col relative pb-10 border-x border-slate-800/60 overflow-hidden">
+
+        <!-- 1. Top Scrolling Live Marquee Banner -->
+        <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-2.5 overflow-hidden marquee-container shadow-md shadow-red-950/50 sticky top-0 z-40 border-b border-red-500/40">
+            <div class="marquee-content flex items-center space-x-6 text-xs font-black tracking-wide text-white uppercase">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-yellow-300"></i> AF V2RAY VIP 5G HIGH SPEED VPN</span>
+                <span>•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-cyan-200"></i> 100% UNLIMITED &amp; ENCRYPTED</span>
+                <span>•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-signal text-green-300"></i> SAUDI ARABIA ALL SIM 100% WORKING</span>
+                <span>•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-yellow-300"></i> AF V2RAY VIP 5G HIGH SPEED VPN</span>
+                <span>•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-cyan-200"></i> 100% UNLIMITED &amp; ENCRYPTED</span>
+                <span>•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-signal text-green-300"></i> SAUDI ARABIA ALL SIM 100% WORKING</span>
+                <span>•</span>
+            </div>
+        </div>
+
+        <!-- 2. Hero Card Section -->
+        <div class="px-4 pt-5 pb-2">
+            <div class="relative bg-gradient-to-b from-slate-900/90 via-slate-800/50 to-slate-900/90 border border-slate-700/60 rounded-3xl p-6 text-center shadow-2xl overflow-hidden backdrop-blur-xl">
+                <!-- Ambient Glow Lights -->
+                <div class="absolute -top-16 -right-16 w-40 h-40 bg-red-600/25 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-16 -left-16 w-40 h-40 bg-cyan-600/25 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Verified Badge -->
+                <div class="absolute top-4 right-4 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full text-[10px] font-black text-emerald-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>ONLINE 5G</span>
+                </div>
+
+                <!-- App 3D Logo with Floating Effect -->
+                <div class="relative z-10 w-24 h-24 mx-auto mb-3 animate-float">
+                    <div class="w-full h-full bg-[#0d1527] rounded-2xl p-1 border-2 border-cyan-400/50 shadow-xl shadow-cyan-500/30 neon-glow flex items-center justify-center overflow-hidden">
+                        <img src="https://i.postimg.cc/sDZyhXcX/IMG-20261031-WA0007.jpg" alt="AF V2RAY VIP Logo" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                </div>
+
+                <!-- App Titles -->
+                <h1 class="text-2xl font-black tracking-tight text-white drop-shadow-md">
+                    AF V2RAY VIP VPN
+                </h1>
+                <p class="text-xs font-semibold text-cyan-400 tracking-wider mt-1 uppercase">
+                    5G High Speed VIP Tunnel
+                </p>
+
+                <!-- App Stats Bar -->
+                <div class="grid grid-cols-3 gap-2 mt-5">
+                    <div class="bg-slate-800/60 border border-slate-700/60 py-2.5 rounded-2xl text-center">
+                        <span class="block text-amber-400 text-xs font-black">4.9 <i class="fa-solid fa-star text-[10px]"></i></span>
+                        <span class="text-[10px] text-slate-400 font-medium">Ratings</span>
+                    </div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 py-2.5 rounded-2xl text-center">
+                        <span class="block text-emerald-400 text-xs font-black">990K+</span>
+                        <span class="text-[10px] text-slate-400 font-medium">Downloads</span>
+                    </div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 py-2.5 rounded-2xl text-center">
+                        <span class="block text-cyan-400 text-xs font-black">35 MB</span>
+                        <span class="text-[10px] text-slate-400 font-medium">Ultra Lite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Animated Big Install Button -->
+        <div class="px-4 py-2">
+            <button onclick="triggerInstall()" class="w-full relative overflow-hidden bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-700 active:scale-95 transition-all duration-200 text-white font-black text-base py-3.5 px-6 rounded-2xl shadow-xl shadow-green-600/30 flex items-center justify-center space-x-3 border border-emerald-400/40 animate-shimmer">
+                <i class="fa-brands fa-android text-2xl"></i>
+                <span class="tracking-wider text-base sm:text-lg">INSTALL APP NOW</span>
+                <i class="fa-solid fa-cloud-arrow-down text-sm bg-white/20 p-1.5 rounded-full"></i>
+            </button>
+        </div>
+
+        <!-- 4. Three Feature Pills -->
+        <div class="grid grid-cols-3 gap-2 px-4 mt-2">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 text-center flex flex-col items-center">
+                <i class="fa-solid fa-infinity text-rose-500 text-sm mb-1"></i>
+                <span class="text-[11px] font-bold text-slate-300">Unlimited</span>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 text-center flex flex-col items-center">
+                <i class="fa-solid fa-lock text-cyan-400 text-sm mb-1"></i>
+                <span class="text-[11px] font-bold text-slate-300">100% Secure</span>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 text-center flex flex-col items-center">
+                <i class="fa-solid fa-bolt text-yellow-400 text-sm mb-1"></i>
+                <span class="text-[11px] font-bold text-slate-300">Ultra Fast</span>
+            </div>
+        </div>
+
+        <!-- 5. 16:9 AUTO-SCROLLING & TOUCH SWIPEABLE CAROUSEL BANNER -->
+        <div class="px-4 mt-6">
+            <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/40 bg-slate-950">
+                <!-- Swiper Wrapper -->
+                <div class="swiper mySwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
+                            <img src="https://i.postimg.cc/8cJFv47B/file-00000000c33c8210b8324307cd14754c.png" alt="AF V2Ray VIP Banner 1" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
+                            <img src="https://i.postimg.cc/ht627Dpb/file-000000000344820ca06ce8ffb7c34898.png" alt="AF V2Ray VIP Banner 2" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide relative w-full h-full select-none overflow-hidden bg-slate-900">
+                            <img src="https://i.postimg.cc/bJQVh70W/file-000000002a2c821095564c2e3dfaae27.png" alt="AF V2Ray VIP Banner 3" class="w-full h-full object-cover">
+                        </div>
+
+                    </div>
+                    <!-- Swiper Pagination Dots -->
+                    <div class="swiper-pagination !bottom-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Saudi Arabia SIM Settings Section -->
+        <div class="px-4 mt-7">
+            <div class="text-center mb-4">
+                <span class="bg-cyan-500/10 text-cyan-400 text-[10px] font-extrabold px-3 py-1 rounded-full border border-cyan-500/30 uppercase tracking-widest inline-block mb-1.5">
+                    KSA SIM SETTINGS
+                </span>
+                <h2 class="text-lg font-black text-white">
+                    সৌদি আরবে পছন্দের প্যাকেজ কোড
+                </h2>
+                <p class="text-xs text-slate-400 font-medium mt-0.5">
+                    প্যাকেজ কিনতে নিচে কোড কপি করুন অথবা সরাসরি অ্যাপ ওপেন করুন
+                </p>
+            </div>
+
+            <!-- Mobily Package 1: 30 SAR -->
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-3.5 relative overflow-hidden group hover:border-slate-700 transition">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <i class="fa-solid fa-sim-card text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-rose-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-wider">
+                                MOBILY NETWORK
+                            </span>
+                            <h3 class="text-sm font-bold text-white mt-0.5">30 SAR DATA PACKAGE</h3>
+                        </div>
+                    </div>
+                    <span class="text-xs font-black text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2 py-1 rounded-lg">
+                        30 SAR
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <button onclick="copyCode('1100', 'Send Code 1100 কপি হয়েছে!')" class="bg-slate-800/90 hover:bg-slate-800 active:scale-95 border border-slate-700/80 rounded-xl py-2.5 px-3 flex items-center justify-between text-xs transition">
+                        <span class="text-slate-400 font-medium">Send:</span>
+                        <span class="font-extrabold text-cyan-300 flex items-center gap-1.5">
+                            1100 <i class="fa-regular fa-copy text-xs"></i>
+                        </span>
+                    </button>
+                    <button onclick="copyCode('8294', 'Type Code 8294 কপি হয়েছে!')" class="bg-slate-800/90 hover:bg-slate-800 active:scale-95 border border-slate-700/80 rounded-xl py-2.5 px-3 flex items-center justify-between text-xs transition">
+                        <span class="text-slate-400 font-medium">Type:</span>
+                        <span class="font-extrabold text-amber-300 flex items-center gap-1.5">
+                            8294 <i class="fa-regular fa-copy text-xs"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobily Package 2: 60 SAR -->
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-3.5 relative overflow-hidden group hover:border-slate-700 transition">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                            <i class="fa-solid fa-sim-card text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-rose-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-wider">
+                                MOBILY NETWORK
+                            </span>
+                            <h3 class="text-sm font-bold text-white mt-0.5">60 SAR DATA PACKAGE</h3>
+                        </div>
+                    </div>
+                    <span class="text-xs font-black text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2 py-1 rounded-lg">
+                        60 SAR
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <button onclick="copyCode('1100', 'Send Code 1100 কপি হয়েছে!')" class="bg-slate-800/90 hover:bg-slate-800 active:scale-95 border border-slate-700/80 rounded-xl py-2.5 px-3 flex items-center justify-between text-xs transition">
+                        <span class="text-slate-400 font-medium">Send:</span>
+                        <span class="font-extrabold text-cyan-300 flex items-center gap-1.5">
+                            1100 <i class="fa-regular fa-copy text-xs"></i>
+                        </span>
+                    </button>
+                    <button onclick="copyCode('440', 'Type Code 440 কপি হয়েছে!')" class="bg-slate-800/90 hover:bg-slate-800 active:scale-95 border border-slate-700/80 rounded-xl py-2.5 px-3 flex items-center justify-between text-xs transition">
+                        <span class="text-slate-400 font-medium">Type:</span>
+                        <span class="font-extrabold text-amber-300 flex items-center gap-1.5">
+                            440 <i class="fa-regular fa-copy text-xs"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Jawway Network Package (60 SAR সরানো হয়েছে) -->
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-3.5 relative overflow-hidden group hover:border-slate-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                            <i class="fa-solid fa-tower-broadcast text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-rose-600 text-white text-[9px] font-black px-2.5 py-0.5 rounded uppercase tracking-wider">
+                                JAWWAY NETWORK
+                            </span>
+                            <h3 class="text-sm font-bold text-white mt-0.5">JAWWAY DATA PACKAGE</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buy From App Button -->
+                <a href="https://play.google.com/store/apps/details?id=com.jawwyevo_main.app" target="_blank" class="mt-3 w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-green-950/40 flex items-center justify-center gap-2 active:scale-95 transition">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i> BUY FROM APP
+                </a>
+            </div>
+
+            <!-- Redbull Network Package -->
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-3.5 relative overflow-hidden group hover:border-slate-700 transition">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
+                            <i class="fa-solid fa-wifi text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-rose-600 text-white text-[9px] font-black px-2.5 py-0.5 rounded uppercase tracking-wider">
+                                REDBULL NETWORK
+                            </span>
+                            <h3 class="text-sm font-bold text-white mt-0.5">(60 SAR) REDBULL DATA PACKAGE</h3>
+                        </div>
+                    </div>
+                    <span class="text-xs font-black text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-2 py-1 rounded-lg">
+                        60 SAR
+                    </span>
+                </div>
+
+                <!-- Buy From App Button -->
+                <a href="https://play.google.com/store/apps/details?id=com.mediapark.rbm" target="_blank" class="mt-3 w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-green-950/40 flex items-center justify-center gap-2 active:scale-95 transition">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i> BUY FROM APP
+                </a>
+            </div>
+
+            <!-- Lebara Network Package -->
+            <div class="bg-gradient-to-b from-slate-900/90 to-slate-900/60 rounded-2xl p-4 border border-slate-800 shadow-xl mb-4 relative overflow-hidden group hover:border-slate-700 transition">
+                <div class="flex justify-between items-start mb-2">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                            <i class="fa-solid fa-globe text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-rose-600 text-white text-[9px] font-black px-2.5 py-0.5 rounded uppercase tracking-wider">
+                                LEBARA NETWORK
+                            </span>
+                            <h3 class="text-sm font-bold text-white mt-0.5">(60 SAR) SOCIAL PACKAGE</h3>
+                        </div>
+                    </div>
+                    <!-- Lebara Official Style Badge -->
+                    <div class="bg-sky-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md shadow-sky-500/20">
+                        <span>LEBARA</span>
+                    </div>
+                </div>
+
+                <!-- Dial Code Button -->
+                <a href="tel:*77*019%23" onclick="copyCode('*77*019#', 'Dial কোড *77*019# কপি হয়েছে!')" class="mt-3 w-full bg-slate-950 hover:bg-slate-900 border-2 border-rose-600 text-white font-extrabold text-xs py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
+                    <i class="fa-regular fa-envelope text-rose-500 text-sm"></i>
+                    <span class="tracking-wider">Dial *77*019#</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 7. Footer -->
+        <div class="mt-auto pt-6 text-center text-slate-500 text-[11px] pb-3">
+            <p>© 2026 AF V2RAY VIP • All Rights Reserved</p>
+            <p class="text-[10px] text-slate-600 mt-0.5">High Speed V2Ray Core v5.14 Enabled</p>
+        </div>
+
+    </div>
+
+    <!-- 8. TELEGRAM POPUP MODAL (স্ক্রিনের ওপর ভেসে ওঠা টেলিগ্রাম পপ-আপ) -->
+    <div id="telegramModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden-popup">
+        <div class="relative w-full max-w-xs bg-gradient-to-b from-slate-900 via-[#0a1224] to-slate-950 border border-cyan-500/40 rounded-3xl p-5 text-center shadow-2xl shadow-cyan-950/60 transform transition-all duration-300">
+            <!-- Close Button -->
+            <button onclick="closeTelegramPopup()" class="absolute top-3 right-3 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 w-7 h-7 rounded-full flex items-center justify-center text-sm transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Telegram Animated Icon -->
+            <div class="w-16 h-16 mx-auto mb-3.5 bg-gradient-to-tr from-sky-500 to-cyan-400 rounded-2xl flex items-center justify-center shadow-lg shadow-sky-500/40 neon-glow animate-bounce">
+                <i class="fa-brands fa-telegram text-white text-3xl"></i>
+            </div>
+
+            <!-- Content -->
+            <h3 class="text-lg font-black text-white tracking-wide">আমাদের টেলিগ্রামে যুক্ত হন</h3>
+            <p class="text-xs text-slate-300 mt-1 mb-4 leading-relaxed font-medium">
+                নতুন আপডেট, ভিআইপি পিন এবং যেকোনো সাপোর্টের জন্য এখনই আমাদের টেলিগ্রাম গ্রুপ/চ্যানেলে যোগ দিন।
+            </p>
+
+            <!-- Telegram Link Button -->
+            <a href="https://t.me/your_telegram_channel" target="_blank" onclick="closeTelegramPopup()" class="w-full bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-600 hover:from-sky-600 hover:to-cyan-600 active:scale-95 text-white font-extrabold text-sm py-3 px-4 rounded-xl shadow-lg shadow-cyan-500/30 flex items-center justify-center gap-2 transition animate-shimmer relative overflow-hidden">
+                <i class="fa-brands fa-telegram text-lg"></i>
+                <span>JOIN TELEGRAM</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-0.5"></i>
+            </a>
+
+            <!-- Dismiss Later -->
+            <button onclick="closeTelegramPopup()" class="mt-2.5 text-[11px] text-slate-400 hover:text-slate-300 underline underline-offset-2">
+                পরে যুক্ত হব (Close)
+            </button>
+        </div>
+    </div>
+
+    <!-- Animated Glass Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 border border-cyan-500/60 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-bold backdrop-blur-md">
+        <i class="fa-solid fa-circle-check text-cyan-400 text-sm"></i>
+        <span id="toast-msg">কোড সফলভাবে কপি হয়েছে!</span>
+    </div>
+
+    <!-- Swiper.js Script CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Swiper (16:9 Auto-scroll + Touch Swipe)
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            speed: 700,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            grabCursor: true,
+        });
+
+        // Trigger App Download Function
+        function triggerInstall() {
+            showToast("ডাউনলোড শুরু হচ্ছে, অপেক্ষা করুন...");
+            setTimeout(() => {
+                window.location.href = "https://github.com/companymybusiness1/luluv2ray/releases/download/v1.0/app-standard-release.apk";
+            }, 800);
+        }
+
+        // Copy Code Functionality
+        function copyCode(text, message) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(message);
+                }).catch(() => {
+                    fallbackCopy(text, message);
+                });
+            } else {
+                fallbackCopy(text, message);
+            }
+        }
+
+        function fallbackCopy(text, message) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand("copy");
+                showToast(message);
+            } catch (err) {
+                showToast("কপি করা সম্ভব হয়নি!");
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // Toast Handler
+        let toastTimeout;
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            const toastMsg = document.getElementById("toast-msg");
+            
+            toastMsg.textContent = msg;
+            toast.classList.add("show");
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2600);
+        }
+
+        // Telegram Popup Logic (১.৫ সেকেন্ড পর পপ-আপ ওপেন হবে)
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                openTelegramPopup();
+            }, 1500);
+        });
+
+        function openTelegramPopup() {
+            const modal = document.getElementById('telegramModal');
+            modal.classList.remove('hidden-popup');
+            modal.classList.add('show-popup');
+        }
+
+        function closeTelegramPopup() {
+            const modal = document.getElementById('telegramModal');
+            modal.classList.remove('show-popup');
+            modal.classList.add('hidden-popup');
+        }
+    </script>
+</body>
+</html>
